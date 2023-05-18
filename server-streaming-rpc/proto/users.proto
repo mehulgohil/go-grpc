@@ -1,0 +1,14 @@
+syntax = "proto3";
+message Response {
+  string username = 1;
+}
+
+message Request {
+  int32 i = 1;
+}
+
+service StreamService {
+  rpc GetUsers(Request) returns (stream Response) {}
+}
+
+option go_package="./;proto";

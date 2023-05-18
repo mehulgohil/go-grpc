@@ -10,16 +10,13 @@ import (
 )
 
 func main() {
-	// Set up connection with the grpc server
 	conn, err := grpc.Dial(":8000", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatalf("Error while making connection, %v", err)
 	}
 
-	// Create a client instance
 	c := proto.NewMoneyTransactionClient(conn)
 
-	// Lets invoke the remote function from client on the server
 	transactionResponse, err := c.MakeTransaction(
 		context.Background(),
 		&proto.TransactionRequest{
