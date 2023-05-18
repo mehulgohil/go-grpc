@@ -60,7 +60,7 @@ func main() {
 		time.Sleep(time.Second) // Add some delay between sending messages
 	}
 
-	stream.CloseSend()
+	//stream.CloseSend()
 
 	for {
 		message, ok := <-messageChannel
