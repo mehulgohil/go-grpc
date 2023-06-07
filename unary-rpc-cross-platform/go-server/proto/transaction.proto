@@ -1,0 +1,16 @@
+syntax = "proto3";
+message TransactionRequest {
+  string    PaidBy   =   1;
+  string    PaidTo     =   2;
+  float     Amount =   3;
+}
+
+message TransactionResponse {
+  bool     Confirmation = 1;
+}
+
+service MoneyTransaction {
+  rpc MakeTransaction(TransactionRequest) returns (TransactionResponse) {}
+}
+
+option go_package = "./;proto";
