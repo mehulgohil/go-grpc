@@ -20,8 +20,8 @@ func main() {
 	transactionResponse, err := c.MakeTransaction(
 		context.Background(),
 		&proto.TransactionRequest{
-			From:   "mag",
-			To:     "gam",
+			From:   "Mehul",
+			To:     "Hiren",
 			Amount: float32(120.15),
 		},
 	)
